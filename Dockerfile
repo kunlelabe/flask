@@ -4,7 +4,6 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY requirements.txt /app
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         openssh-server \
@@ -18,6 +17,8 @@ RUN apt-get update \
     && pip install virtualenv \
     && pip install flask
     
+COPY requirements.txt /app
+
 RUN export PYTHONPATH=/usr/bin/python \
  && pip install -r requirements.txt
 
