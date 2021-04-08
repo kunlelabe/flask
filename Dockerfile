@@ -25,4 +25,4 @@ COPY . /app
 
 EXPOSE 8080
 
-CMD ["python", "runserver.py", "db.py", "test.py"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
