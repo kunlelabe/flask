@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "mykubecluster-b765"
+    labels:
+        app: "mykubecluster-b765"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: mykubeclustera3fc-mykubecluster-b765.7d3549cb7070440c94e4.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "mykubecluster-b765"
+                servicePort: 8080
