@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mykubecluster-b765"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mykubecluster-b765"
+  template:
+    metadata:
+      labels:
+        app: "mykubecluster-b765"
+    spec:
+      containers:
+        - name: "mykubecluster-b765"
+          image: "productioncrg.azurecr.io/mykubecluster"
+          ports:
+          - containerPort: 8080
